@@ -1,0 +1,11 @@
+InternshipTracker/
+│
+├── app.py
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   └── style.css
+│
+└── database.db

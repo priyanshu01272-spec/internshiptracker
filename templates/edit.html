@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Edit Application</h2>
+
+<form action="/update/{{ app[0] }}" method="POST" class="form-card">
+
+    <input type="text" name="company" value="{{ app[1] }}" required>
+
+    <input type="text" name="role" value="{{ app[2] }}" required>
+
+    <input type="date" name="date" value="{{ app[3] }}" required>
+
+    <select name="status">
+        {% for s in ['Applied', 'Interview', 'Rejected', 'Selected'] %}
+            <option {% if s == app[4] %}selected{% endif %}>
+                {{ s }}
+            </option>
+        {% endfor %}
+    </select>
+
+    <textarea name="notes">{{ app[5] }}</textarea>
+
+    <button type="submit">Update</button>
+
+    <a href="/">Cancel</a>
+
+</form>
+
+{% endblock %}
