@@ -6,6 +6,7 @@ DB = "applications.db"
 
 
 # Runs once to create the database table
+
 def init_db():
     con = sqlite3.connect(DB)
     con.execute("""
